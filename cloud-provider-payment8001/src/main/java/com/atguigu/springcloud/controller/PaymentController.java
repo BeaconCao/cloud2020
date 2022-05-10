@@ -3,7 +3,6 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entity.CommonResult;
 import com.atguigu.springcloud.entity.Payment;
 import com.atguigu.springcloud.service.PaymentService;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
