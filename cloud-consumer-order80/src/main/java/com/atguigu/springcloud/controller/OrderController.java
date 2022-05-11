@@ -3,6 +3,7 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entity.CommonResult;
 import com.atguigu.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,8 +16,12 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
-    @Resource
+    //public static final String PAYMENT_URL = "http://localhost:8001";
+    /**负载均衡方式访问*/
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-PROVIDER";
+
+
+    @Autowired
     private RestTemplate restTemplate;
 
 

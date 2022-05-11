@@ -13,7 +13,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-
     @Value("${server.port}")
     private String serverPort;
 
@@ -22,6 +21,7 @@ public class PaymentController {
         Payment payment = paymentService.selectPaymentById(paymentId);
         return new CommonResult<>(200, "ok,server port is " + serverPort, payment);
     }
+
 
     @PostMapping("/savePayment")
     public CommonResult savePayment(@RequestBody Payment payment) {
